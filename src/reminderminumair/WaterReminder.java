@@ -37,5 +37,30 @@ public class WaterReminder {
             System.out.println("Tanggal tersebut belum ada catatan. Silahkan tambah dulu.");
         }
     }
+    public void lihatProgress(LocalDate tanggal){
+        int jumlah =
+                catatanAir.getOrDefault(tanggal, 0);
+        System.out.println("\n Progress Tanggal: "+ tanggal);
+        System.out.println("Nama : " + namaPengguna + "telah minum" + jumlah + "ml dari target" + targetHarian + "ml");
+        int persen = (int) ((double) jumlah / targetHarian * 100);
+        System.out.println("Persentase : " + persen + "%");
+        
+        if (jumlah>= targetHarian){
+            System.out.println("Target Harian telah tercapai.");
+        } else {
+            System.out.println("Belum Mencapai Target Harian Anda.");
+        }
+    }
+    
+    public void lihatRiwayat(){
+        System.out.println("\nRIWAYAT MINUM ANDA");
+        if (catatanAir.isEmpty()) {
+            System.out.println("Belum ada data.");
+        } else {
+            for (Map.Entry<LocalDate, Integer> entry : catatanAir.entrySet()){
+                System.out.println("Tanggal" + entry.getKey()+ ":" + entry.getValue()+ "ml");
+            }
+        }
+    }
 
 }
