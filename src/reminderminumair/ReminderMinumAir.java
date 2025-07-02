@@ -21,6 +21,8 @@ public class ReminderMinumAir {
             
             WaterReminder reminder = new WaterReminder(nama, target);
             
+            User pengguna = reminder;
+            pengguna.tampilkanProfil();
             int pilihan =-1;
             
             while (pilihan !=0){
