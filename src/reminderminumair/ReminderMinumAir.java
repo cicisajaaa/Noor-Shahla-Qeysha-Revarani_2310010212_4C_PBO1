@@ -9,6 +9,12 @@ public class ReminderMinumAir {
         try (Scanner input = new Scanner(System.in)){
             LocalDate hariIni = LocalDate.now();
             
+            WaterReminder[] pengguna = new WaterReminder[10];
+            int jumlahPengguna = 2;
+            
+            pengguna[0] = new WaterReminder("Qeysha", 2000);
+            pengguna[1] = new WaterReminder("Cici", 1800);
+            
             System.out.println("====================");
             System.out.println("APLIKASI PENGINGAT MINUM AIR SEDERHANA");
             System.out.println("====================");
@@ -19,11 +25,14 @@ public class ReminderMinumAir {
             System.out.println("Masukkan Target Minum Harian Anda (ml) : ");
             int target = input.nextInt();
             
-            WaterReminder reminder = new WaterReminder(nama, target);
+            pengguna[jumlahPengguna] = new WaterReminder(nama, target);
+            WaterReminder reminder = pengguna[jumlahPengguna];
+            jumlahPengguna++;
             
-            User pengguna = reminder;
-            pengguna.tampilkanProfil();
+            User penggunaAktif = reminder;
+            penggunaAktif.tampilkanProfil();
             int pilihan =-1;
+          
             
             while (pilihan !=0){
                 System.out.println("\n===== MENU =====");
@@ -71,6 +80,5 @@ public class ReminderMinumAir {
                 }
             }
         }
-    }
- 
+    } 
 }
