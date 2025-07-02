@@ -22,6 +22,18 @@ public class ReminderMinumAir {
             WaterReminder reminder = new WaterReminder(nama, target);
             
             int pilihan =-1;
+            
+            while (pilihan !=0){
+                System.out.println("\n===== MENU =====");
+                System.out.println("1. Tambah Minum Hari Ini: ");
+                System.out.println("2. Lihat Progress Hari Ini");
+                System.out.println("3. Tambah Minum pada Tanggal Lain");
+                System.out.println("4. Edit Minum Pada Tangga; Tertentu");
+                System.out.println("5. Lihat Riwayat Minum");
+                System.out.println("0. Keluar");
+                System.out.println("Pilihan: ");
+                pilihan = input.nextInt();
+            }
         }
     }
  
