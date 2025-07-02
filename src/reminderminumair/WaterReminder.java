@@ -5,12 +5,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class WaterReminder {
+public class WaterReminder extends User {
     private final String namaPengguna;                  // Nama pengguna
     private final int targetHarian;                     // Target minum harian dalam ml
     private final Map<LocalDate, Integer> catatanAir;   // Catatan jumlah minum per tanggal
 
+    @Override
+    public void tampilkanProfil(){ System.out.println("Profil Pengguna : " + namaPengguna + " | Target Harian : " + targetHarian + "ml");
+    }
     public WaterReminder(String nama, int target) {
+        super(nama);
         this.namaPengguna = nama;
         this.targetHarian = target;
         this.catatanAir = new HashMap<>();
