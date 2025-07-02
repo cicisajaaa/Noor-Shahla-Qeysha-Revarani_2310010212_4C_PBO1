@@ -23,5 +23,19 @@ public class WaterReminder {
     public int getTargetHarian() {
         return targetHarian;
     }
+    public void tambahAir(LocalDate tanggal, int jumlah){
+        int total = 
+                catatanAir.getOrDefault(tanggal, 0);
+                catatanAir.put(tanggal, total + jumlah);
+                System.out.println("Berhasil Menambahkan" + jumlah + "ml untuk tanggal" + tanggal);
+    }
+    public void editAir(LocalDate tanggal, int jumlahBaru){
+        if(catatanAir.containsKey(tanggal)){
+            catatanAir.put(tanggal, jumlahBaru);
+            System.out.println("Data Tanggal" + tanggal + "diubah menjadi" + jumlahBaru + "ml");
+        } else {
+            System.out.println("Tanggal tersebut belum ada catatan. Silahkan tambah dulu.");
+        }
+    }
 
 }
