@@ -6,7 +6,7 @@ import java.util.Map;
 
 
 public class WaterReminder extends User {                 // Nama pengguna
-    private final int targetHarian;                     // Target minum harian dalam ml
+    private int targetHarian;                     // Target minum harian dalam ml
     private final Map<LocalDate, Integer> catatanAir;   // Catatan jumlah minum per tanggal
 
     @Override
@@ -24,6 +24,10 @@ public class WaterReminder extends User {                 // Nama pengguna
 
     public int getTargetHarian() {
         return targetHarian;
+    }
+    public void setTargetHarian(int targetBaru){
+        this.targetHarian = targetBaru;
+        System.out.println("Target harian berhasil diubah menjadi " + targetBaru + "ml. ");
     }
     public void tambahAir(LocalDate tanggal, int jumlah){
         int total = 
