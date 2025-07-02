@@ -5,23 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class WaterReminder extends User {
-    private final String namaPengguna;                  // Nama pengguna
+public class WaterReminder extends User {                 // Nama pengguna
     private final int targetHarian;                     // Target minum harian dalam ml
     private final Map<LocalDate, Integer> catatanAir;   // Catatan jumlah minum per tanggal
 
     @Override
-    public void tampilkanProfil(){ System.out.println("Profil Pengguna : " + namaPengguna + " | Target Harian : " + targetHarian + "ml");
+    public void tampilkanProfil(){ System.out.println("Profil Pengguna : " + nama+ " | Target Harian : " + targetHarian + "ml");
     }
     public WaterReminder(String nama, int target) {
         super(nama);
-        this.namaPengguna = nama;
         this.targetHarian = target;
         this.catatanAir = new HashMap<>();
     }
 
     public String getNamaPengguna() {
-        return namaPengguna;
+        return nama;
     }
 
     public int getTargetHarian() {
@@ -45,7 +43,7 @@ public class WaterReminder extends User {
         int jumlah =
                 catatanAir.getOrDefault(tanggal, 0);
         System.out.println("Progress Tanggal: "+ tanggal);
-        System.out.println("Nama : " + namaPengguna + " telah minum " + jumlah + "ml dari target " + targetHarian + "ml");
+        System.out.println("Nama : " + nama + " telah minum " + jumlah + "ml dari target " + targetHarian + "ml");
         int persen = (int) ((double) jumlah / targetHarian * 100);
         System.out.println("Persentase : " + persen + "%");
         
