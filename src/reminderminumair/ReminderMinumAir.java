@@ -18,6 +18,10 @@ public class ReminderMinumAir {
             
             System.out.println("Masukkan Target Minum Harian Anda (ml) : ");
             int target = input.nextInt();
+            
+            WaterReminder reminder = new WaterReminder(nama, target);
+            
+            int pilihan =-1;
         }
     }
  
