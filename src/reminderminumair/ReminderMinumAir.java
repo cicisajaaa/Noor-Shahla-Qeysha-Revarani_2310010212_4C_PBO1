@@ -33,6 +33,40 @@ public class ReminderMinumAir {
                 System.out.println("0. Keluar");
                 System.out.println("Pilihan: ");
                 pilihan = input.nextInt();
+                
+                switch (pilihan) {
+                    case 1 -> {
+                        System.out.println("Masukkan Jumlah Air (ml): ");
+                        int jumlah = input.nextInt();
+                        reminder.tambahAir(hariIni, jumlah);
+                    }
+                    case 2 -> 
+                        reminder.lihatProgress(hariIni);
+                    case 3 -> {
+                        input.nextLine();
+                        System.out.println("Masukkan Tanggal (yyyy-mm-dd): ");
+                        String tglInput = input.nextLine();
+                        LocalDate TanggalLain = LocalDate.parse(tglInput);
+                        System.out.println("Jumlah Air (ml): ");
+                        int jml = input.nextInt();
+                      reminder.tambahAir(tanggalLain, jml);
+                    }
+                    case 4 -> { 
+                        input.nextLine();
+                        System.out.println("Masukkan Tanggal yang ingin di edit (yyyy-mm-dd): ");
+                        String editTgl = input.nextLine();
+                        LocalDate editTanggal = LocalDate.parse(editTgl);
+                        System.out.println("Jumlah air baru (ml): ");
+                        int baru = input.nextInt();
+                        reminder.editAir(editTanggal, baru);
+                    }
+                    case 5 -> 
+                       reminder.lihatRiwayat();
+                    case 0 ->
+                        System.out.println("Terimakasih Sudah menggunakan aplikasi ini.");
+                    default ->
+                        System.out.println("Pilihan Tidak Tersedia.");
+                }
             }
         }
     }
