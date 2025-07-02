@@ -63,7 +63,7 @@ public class ReminderMinumAir {
                     case 5 -> 
                        reminder.lihatRiwayat();
                     case 0 ->
-                        System.out.println("Terimakasih Sudah menggunakan aplikasi ini.");
+                        System.out.println("Terimakasih sudah menggunakan aplikasi ini.");
                     default ->
                         System.out.println("Pilihan Tidak Tersedia.");
                 }

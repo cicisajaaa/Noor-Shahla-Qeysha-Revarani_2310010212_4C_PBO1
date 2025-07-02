@@ -27,12 +27,12 @@ public class WaterReminder {
         int total = 
                 catatanAir.getOrDefault(tanggal, 0);
                 catatanAir.put(tanggal, total + jumlah);
-                System.out.println("Berhasil Menambahkan" + jumlah + "ml untuk tanggal" + tanggal);
+                System.out.println("Berhasil Menambahkan " + jumlah + "ml untuk tanggal " + tanggal);
     }
     public void editAir(LocalDate tanggal, int jumlahBaru){
         if(catatanAir.containsKey(tanggal)){
             catatanAir.put(tanggal, jumlahBaru);
-            System.out.println("Data Tanggal" + tanggal + "diubah menjadi" + jumlahBaru + "ml");
+            System.out.println("Data Tanggal " + tanggal + " diubah menjadi " + jumlahBaru + "ml");
         } else {
             System.out.println("Tanggal tersebut belum ada catatan. Silahkan tambah dulu.");
         }
@@ -40,8 +40,8 @@ public class WaterReminder {
     public void lihatProgress(LocalDate tanggal){
         int jumlah =
                 catatanAir.getOrDefault(tanggal, 0);
-        System.out.println("\n Progress Tanggal: "+ tanggal);
-        System.out.println("Nama : " + namaPengguna + "telah minum" + jumlah + "ml dari target" + targetHarian + "ml");
+        System.out.println("Progress Tanggal: "+ tanggal);
+        System.out.println("Nama : " + namaPengguna + " telah minum " + jumlah + "ml dari target " + targetHarian + "ml");
         int persen = (int) ((double) jumlah / targetHarian * 100);
         System.out.println("Persentase : " + persen + "%");
         
@@ -58,7 +58,7 @@ public class WaterReminder {
             System.out.println("Belum ada data.");
         } else {
             for (Map.Entry<LocalDate, Integer> entry : catatanAir.entrySet()){
-                System.out.println("Tanggal" + entry.getKey()+ ":" + entry.getValue()+ "ml");
+                System.out.println("Tanggal " + entry.getKey()+ " : " + entry.getValue()+ "ml");
             }
         }
     }
