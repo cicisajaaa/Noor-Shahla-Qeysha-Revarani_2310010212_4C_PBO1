@@ -28,10 +28,10 @@ public class ReminderMinumAir {
                 System.out.println("1. Tambah Minum Hari Ini: ");
                 System.out.println("2. Lihat Progress Hari Ini");
                 System.out.println("3. Tambah Minum pada Tanggal Lain");
-                System.out.println("4. Edit Minum Pada Tangga; Tertentu");
+                System.out.println("4. Edit Minum Pada Tanggal Tertentu");
                 System.out.println("5. Lihat Riwayat Minum");
                 System.out.println("0. Keluar");
-                System.out.println("Pilihan: ");
+                System.out.print("Pilihan: ");
                 pilihan = input.nextInt();
                 
                 switch (pilihan) {
@@ -46,7 +46,7 @@ public class ReminderMinumAir {
                         input.nextLine();
                         System.out.println("Masukkan Tanggal (yyyy-mm-dd): ");
                         String tglInput = input.nextLine();
-                        LocalDate TanggalLain = LocalDate.parse(tglInput);
+                        LocalDate tanggalLain = LocalDate.parse(tglInput);
                         System.out.println("Jumlah Air (ml): ");
                         int jml = input.nextInt();
                       reminder.tambahAir(tanggalLain, jml);
