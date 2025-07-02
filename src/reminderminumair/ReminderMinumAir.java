@@ -41,6 +41,7 @@ public class ReminderMinumAir {
                 System.out.println("3. Tambah Minum pada Tanggal Lain");
                 System.out.println("4. Edit Minum Pada Tanggal Tertentu");
                 System.out.println("5. Lihat Riwayat Minum");
+                System.out.println("6. Ubah Target Harian");
                 System.out.println("0. Keluar");
                 System.out.print("Pilihan: ");
                 pilihan = input.nextInt();
@@ -73,12 +74,18 @@ public class ReminderMinumAir {
                     }
                     case 5 -> 
                        reminder.lihatRiwayat();
+                    case 6 -> {
+                       System.out.println("Masukkan Target Harian Baru (ml): "); 
+                       int targetBaru = input.nextInt();
+                       reminder.setTargetHarian(targetBaru);
+                    }
                     case 0 ->
                         System.out.println("Terimakasih sudah menggunakan aplikasi ini.");
                     default ->
                         System.out.println("Pilihan Tidak Tersedia.");
-                }
+                
             }
         }
     } 
+}
 }
